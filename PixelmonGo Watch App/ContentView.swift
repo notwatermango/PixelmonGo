@@ -7,12 +7,17 @@
 
 import SwiftUI
 
-struct ContentView: View {    
-    
+struct ContentView: View {
     var body: some View {
         TabView {
-            Text("hi")
-            Text("wow")
+            FindView()
+                .tabItem {
+                    Label("Airplane Tab", systemImage: "airplane.circle")
+                }
+            InventoryView()
+                .tabItem {
+                    Label("Planet Tab", systemImage: "globe.americas.fill")
+                }
         }
         .tabViewStyle(.verticalPage)
     }

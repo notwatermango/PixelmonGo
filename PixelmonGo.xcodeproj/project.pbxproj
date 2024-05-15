@@ -12,6 +12,8 @@
 		FFC612472BF4BE38008FF57B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC612462BF4BE38008FF57B /* ContentView.swift */; };
 		FFC612492BF4BE39008FF57B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC612482BF4BE39008FF57B /* Assets.xcassets */; };
 		FFC6124C2BF4BE39008FF57B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC6124B2BF4BE39008FF57B /* Preview Assets.xcassets */; };
+		FFC612592BF4C34F008FF57B /* FindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC612582BF4C34F008FF57B /* FindView.swift */; };
+		FFC6125B2BF4C62D008FF57B /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC6125A2BF4C62C008FF57B /* InventoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		FFC612462BF4BE38008FF57B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FFC612482BF4BE39008FF57B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFC6124B2BF4BE39008FF57B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFC612582BF4C34F008FF57B /* FindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindView.swift; sourceTree = "<group>"; };
+		FFC6125A2BF4C62C008FF57B /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 			children = (
 				FFC612442BF4BE38008FF57B /* PixelmonGoApp.swift */,
 				FFC612462BF4BE38008FF57B /* ContentView.swift */,
+				FFC612582BF4C34F008FF57B /* FindView.swift */,
+				FFC6125A2BF4C62C008FF57B /* InventoryView.swift */,
 				FFC612482BF4BE39008FF57B /* Assets.xcassets */,
 				FFC6124A2BF4BE39008FF57B /* Preview Content */,
 			);
@@ -194,6 +200,8 @@
 			files = (
 				FFC612472BF4BE38008FF57B /* ContentView.swift in Sources */,
 				FFC612452BF4BE38008FF57B /* PixelmonGoApp.swift in Sources */,
+				FFC612592BF4C34F008FF57B /* FindView.swift in Sources */,
+				FFC6125B2BF4C62D008FF57B /* InventoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
