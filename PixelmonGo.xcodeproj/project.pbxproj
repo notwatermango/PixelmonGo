@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF7B8EEB2BF77102009A6BE0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7B8EEA2BF77102009A6BE0 /* LocationManager.swift */; };
 		FFC612402BF4BE38008FF57B /* PixelmonGo Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FFC6123F2BF4BE38008FF57B /* PixelmonGo Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FFC612452BF4BE38008FF57B /* PixelmonGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC612442BF4BE38008FF57B /* PixelmonGoApp.swift */; };
 		FFC612472BF4BE38008FF57B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC612462BF4BE38008FF57B /* ContentView.swift */; };
@@ -43,6 +44,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FF7B8EEA2BF77102009A6BE0 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		FF7B8EEC2BF77472009A6BE0 /* PixelmonGo-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "PixelmonGo-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FFC612392BF4BE38008FF57B /* PixelmonGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelmonGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC6123F2BF4BE38008FF57B /* PixelmonGo Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PixelmonGo Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC612442BF4BE38008FF57B /* PixelmonGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelmonGoApp.swift; sourceTree = "<group>"; };
@@ -86,7 +89,9 @@
 		FFC612432BF4BE38008FF57B /* PixelmonGo Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				FF7B8EEC2BF77472009A6BE0 /* PixelmonGo-Watch-App-Info.plist */,
 				FFC612622BF4E03B008FF57B /* CompassHeading.swift */,
+				FF7B8EEA2BF77102009A6BE0 /* LocationManager.swift */,
 				FFC612602BF4E029008FF57B /* DirectionHelper.swift */,
 				FFC612442BF4BE38008FF57B /* PixelmonGoApp.swift */,
 				FFC612462BF4BE38008FF57B /* ContentView.swift */,
@@ -208,6 +213,7 @@
 				FFC612472BF4BE38008FF57B /* ContentView.swift in Sources */,
 				FFC612612BF4E029008FF57B /* DirectionHelper.swift in Sources */,
 				FFC612452BF4BE38008FF57B /* PixelmonGoApp.swift in Sources */,
+				FF7B8EEB2BF77102009A6BE0 /* LocationManager.swift in Sources */,
 				FFC612632BF4E03B008FF57B /* CompassHeading.swift in Sources */,
 				FFC612592BF4C34F008FF57B /* FindView.swift in Sources */,
 				FFC6125B2BF4C62D008FF57B /* InventoryView.swift in Sources */,
@@ -350,7 +356,9 @@
 				DEVELOPMENT_TEAM = 326C9U59AH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PixelmonGo-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = PixelmonGo;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Always need your location";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -380,7 +388,9 @@
 				DEVELOPMENT_TEAM = 326C9U59AH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PixelmonGo-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = PixelmonGo;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Always need your location";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
