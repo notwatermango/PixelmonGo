@@ -14,10 +14,14 @@ struct ContentView: View {
                 .tabItem {
                     Label("Airplane Tab", systemImage: "airplane.circle")
                 }
+                .containerBackground(.green.gradient,
+                                     for: .tabView)
             InventoryView()
                 .tabItem {
                     Label("Planet Tab", systemImage: "globe.americas.fill")
                 }
+                .containerBackground(.blue.gradient,
+                                     for: .tabView)
         }
         .tabViewStyle(.verticalPage)
     }

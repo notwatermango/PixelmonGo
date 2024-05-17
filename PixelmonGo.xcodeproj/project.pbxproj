@@ -14,6 +14,8 @@
 		FFC6124C2BF4BE39008FF57B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC6124B2BF4BE39008FF57B /* Preview Assets.xcassets */; };
 		FFC612592BF4C34F008FF57B /* FindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC612582BF4C34F008FF57B /* FindView.swift */; };
 		FFC6125B2BF4C62D008FF57B /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC6125A2BF4C62C008FF57B /* InventoryView.swift */; };
+		FFC612612BF4E029008FF57B /* DirectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC612602BF4E029008FF57B /* DirectionHelper.swift */; };
+		FFC612632BF4E03B008FF57B /* CompassHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC612622BF4E03B008FF57B /* CompassHeading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		FFC6124B2BF4BE39008FF57B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FFC612582BF4C34F008FF57B /* FindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindView.swift; sourceTree = "<group>"; };
 		FFC6125A2BF4C62C008FF57B /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
+		FFC612602BF4E029008FF57B /* DirectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionHelper.swift; sourceTree = "<group>"; };
+		FFC612622BF4E03B008FF57B /* CompassHeading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassHeading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 		FFC612432BF4BE38008FF57B /* PixelmonGo Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				FFC612622BF4E03B008FF57B /* CompassHeading.swift */,
+				FFC612602BF4E029008FF57B /* DirectionHelper.swift */,
 				FFC612442BF4BE38008FF57B /* PixelmonGoApp.swift */,
 				FFC612462BF4BE38008FF57B /* ContentView.swift */,
 				FFC612582BF4C34F008FF57B /* FindView.swift */,
@@ -149,6 +155,7 @@
 				TargetAttributes = {
 					FFC612382BF4BE38008FF57B = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 					};
 					FFC6123E2BF4BE38008FF57B = {
 						CreatedOnToolsVersion = 15.3;
@@ -199,7 +206,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFC612472BF4BE38008FF57B /* ContentView.swift in Sources */,
+				FFC612612BF4E029008FF57B /* DirectionHelper.swift in Sources */,
 				FFC612452BF4BE38008FF57B /* PixelmonGoApp.swift in Sources */,
+				FFC612632BF4E03B008FF57B /* CompassHeading.swift in Sources */,
 				FFC612592BF4C34F008FF57B /* FindView.swift in Sources */,
 				FFC6125B2BF4C62D008FF57B /* InventoryView.swift in Sources */,
 			);
@@ -395,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 326C9U59AH;
@@ -403,6 +413,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nwm.PixelmonGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -411,6 +422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 326C9U59AH;
