@@ -83,28 +83,29 @@ struct CompassMarkerView: View {
 
 struct FindView: View {
     @ObservedObject var compassHeading = CompassHeading()
-    @State var pixelmonDegree = 40
+//    @State var pixelmonDegree = 40
     @ObservedObject var locationManager = LocationManager()
 
     var body: some View {
         VStack {
-            Capsule()
-                .frame(width: 2,
-                       height: 30)
-            ZStack {
-                ForEach(Marker.markers(pixelmonDegree: Double(pixelmonDegree)), id: \.self) { marker in
-                    CompassMarkerView(marker: marker,
-                                      compassDegress: self.compassHeading.degrees)
-                }
-            }
-            .frame(width: 150,
-                   height: 150)
-            .rotationEffect(Angle(degrees: self.compassHeading.degrees))
             if let myLocation = locationManager.location {
-                Text("Latitude: \(myLocation.latitude.formatted(.number.precision(.fractionLength(0)))), Longitude: \(myLocation.longitude.formatted(.number.precision(.fractionLength(0))))".uppercased())
+                let pmDegree = Direction(from: Coordinates(latitude: myLocation.latitude, longitude: myLocation.longitude), to: Coordinates(latitude: -6.302107894052675, longitude: 106.65240718297603)).direction
+                
+                            Capsule()
+                                .frame(width: 2,
+                                       height: 30)
+                            ZStack {
+                                ForEach(Marker.markers(pixelmonDegree: Double(pmDegree)), id: \.self) { marker in
+                                    CompassMarkerView(marker: marker,
+                                                      compassDegress: self.compassHeading.degrees)
+                                }
+                            }
+                            .frame(width: 150,
+                                   height: 150)
+                            .rotationEffect(Angle(degrees: self.compassHeading.degrees))
             } else {
                 LocationButton {
-                    locationManager.requestLocation()
+                    locationManager.startUpdatingLocation()
                 }
                 .labelStyle(.iconOnly)
                 .cornerRadius(20)

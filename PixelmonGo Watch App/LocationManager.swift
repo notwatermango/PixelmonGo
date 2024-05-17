@@ -28,11 +28,16 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         manager.requestLocation()
     }
     
+    func startUpdatingLocation() {
+        manager.startUpdatingLocation()
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         degrees = newHeading.trueHeading
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        location = locations.first?.coordinate
+        guard let location = locations.last else { return }
+        self.location = location.coordinate
     }
 }
