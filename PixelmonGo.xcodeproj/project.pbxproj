@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FF7B8EEB2BF77102009A6BE0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7B8EEA2BF77102009A6BE0 /* LocationManager.swift */; };
+		FFAABAFE2BFB4FF4004ED0A1 /* PixelmonCatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAABAFD2BFB4FF4004ED0A1 /* PixelmonCatchView.swift */; };
+		FFAABB002BFB4FFF004ED0A1 /* PixelmonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAABAFF2BFB4FFF004ED0A1 /* PixelmonButtonView.swift */; };
+		FFAABB022BFB503D004ED0A1 /* Pixelmon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAABB012BFB503D004ED0A1 /* Pixelmon.swift */; };
 		FFC612402BF4BE38008FF57B /* PixelmonGo Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FFC6123F2BF4BE38008FF57B /* PixelmonGo Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FFC612452BF4BE38008FF57B /* PixelmonGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC612442BF4BE38008FF57B /* PixelmonGoApp.swift */; };
 		FFC612472BF4BE38008FF57B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC612462BF4BE38008FF57B /* ContentView.swift */; };
@@ -46,6 +49,10 @@
 /* Begin PBXFileReference section */
 		FF7B8EEA2BF77102009A6BE0 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FF7B8EEC2BF77472009A6BE0 /* PixelmonGo-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "PixelmonGo-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FFAABAFD2BFB4FF4004ED0A1 /* PixelmonCatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelmonCatchView.swift; sourceTree = "<group>"; };
+		FFAABAFF2BFB4FFF004ED0A1 /* PixelmonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelmonButtonView.swift; sourceTree = "<group>"; };
+		FFAABB012BFB503D004ED0A1 /* Pixelmon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixelmon.swift; sourceTree = "<group>"; };
+		FFAABB032BFB7B2B004ED0A1 /* PixelmonGo Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PixelmonGo Watch App.entitlements"; sourceTree = "<group>"; };
 		FFC612392BF4BE38008FF57B /* PixelmonGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelmonGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC6123F2BF4BE38008FF57B /* PixelmonGo Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PixelmonGo Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC612442BF4BE38008FF57B /* PixelmonGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelmonGoApp.swift; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 		FFC612432BF4BE38008FF57B /* PixelmonGo Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				FFAABB032BFB7B2B004ED0A1 /* PixelmonGo Watch App.entitlements */,
 				FF7B8EEC2BF77472009A6BE0 /* PixelmonGo-Watch-App-Info.plist */,
 				FFC612622BF4E03B008FF57B /* CompassHeading.swift */,
 				FF7B8EEA2BF77102009A6BE0 /* LocationManager.swift */,
@@ -96,6 +104,9 @@
 				FFC612442BF4BE38008FF57B /* PixelmonGoApp.swift */,
 				FFC612462BF4BE38008FF57B /* ContentView.swift */,
 				FFC612582BF4C34F008FF57B /* FindView.swift */,
+				FFAABAFD2BFB4FF4004ED0A1 /* PixelmonCatchView.swift */,
+				FFAABAFF2BFB4FFF004ED0A1 /* PixelmonButtonView.swift */,
+				FFAABB012BFB503D004ED0A1 /* Pixelmon.swift */,
 				FFC6125A2BF4C62C008FF57B /* InventoryView.swift */,
 				FFC612482BF4BE39008FF57B /* Assets.xcassets */,
 				FFC6124A2BF4BE39008FF57B /* Preview Content */,
@@ -211,9 +222,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFC612472BF4BE38008FF57B /* ContentView.swift in Sources */,
+				FFAABB022BFB503D004ED0A1 /* Pixelmon.swift in Sources */,
 				FFC612612BF4E029008FF57B /* DirectionHelper.swift in Sources */,
 				FFC612452BF4BE38008FF57B /* PixelmonGoApp.swift in Sources */,
 				FF7B8EEB2BF77102009A6BE0 /* LocationManager.swift in Sources */,
+				FFAABB002BFB4FFF004ED0A1 /* PixelmonButtonView.swift in Sources */,
+				FFAABAFE2BFB4FF4004ED0A1 /* PixelmonCatchView.swift in Sources */,
 				FFC612632BF4E03B008FF57B /* CompassHeading.swift in Sources */,
 				FFC612592BF4C34F008FF57B /* FindView.swift in Sources */,
 				FFC6125B2BF4C62D008FF57B /* InventoryView.swift in Sources */,
@@ -350,6 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PixelmonGo Watch App/PixelmonGo Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PixelmonGo Watch App/Preview Content\"";
@@ -382,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PixelmonGo Watch App/PixelmonGo Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PixelmonGo Watch App/Preview Content\"";

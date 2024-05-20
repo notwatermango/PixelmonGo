@@ -11,7 +11,7 @@ import SwiftUI
 struct PixelmonGo_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewId: 2)
         }
     }
 }

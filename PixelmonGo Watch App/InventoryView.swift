@@ -11,32 +11,23 @@ struct InventoryView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                NavigationLink(destination: NestedItemB()) {
-                    Text(">")
+                ForEach(pixelmons) {pixelmon in
+                    NavigationLink(destination: NestedItemB(pixelmon: pixelmon)) {
+                        Text(">")
+                    }
+                    .navigationTitle("Inventory")
                 }
-                .navigationTitle("Inventory")
-                NavigationLink(destination: NestedItemB()) {
-                    Text(">")
-                }
-                .navigationTitle("Inventory")
-                NavigationLink(destination: NestedItemB()) {
-                    Text(">")
-                }
-                .navigationTitle("Inventory")
-                NavigationLink(destination: NestedItemB()) {
-                    Text(">")
-                }
-                .navigationTitle("Inventory")
             }
         }
     }
 }
 
 struct NestedItemB: View {
+    let pixelmon: Pixelmon
     var body: some View {
         NavigationStack {
-            Text("Planet spin good")
-                .navigationTitle("Nested planet")
+            Text(pixelmon.description)
+                .navigationTitle(pixelmon.name)
         }
     }
 }
