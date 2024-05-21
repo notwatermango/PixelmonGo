@@ -9,16 +9,18 @@ import SwiftUI
 
 struct PixelmonButtonView: View {
     let pixelmon: Pixelmon
+    @State private var isActive = false
+
     var body: some View {
         ZStack(alignment: .top) {
-            NavigationView {
+            NavigationStack {
+                Text("A pixelmon has appeared!").font(.footnote)
                 NavigationLink(destination: PixelmonCatchView(pixelmon: pixelmon)
                                ,label: {
                     Image(systemName: "trash")
                 })
                 .frame(width: 60, height: 60)
             }
-            Text("A pixelmon has appeared!").font(.footnote)
         }
     }
 }

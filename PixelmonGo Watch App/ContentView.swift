@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var viewId: Int
+    @AppStorage("currentPage") var currentPage = 1
+    @AppStorage("currentPokemon") var currentPokemonIndex = 0
+    @AppStorage("currentCaughtPokemon") var currentCaughtPokemon = -1
+    
     var body: some View {
-        TabView(selection: $viewId) {
+        TabView(selection: $currentPage) {
             FindView()
                 .tabItem {
                     Label("Radar Tab", systemImage: "airplane.circle")
@@ -30,6 +33,8 @@ struct ContentView: View {
     }
 }
 
+
+
 #Preview {
-    ContentView(viewId: 1)
+    ContentView()
 }

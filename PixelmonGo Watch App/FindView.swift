@@ -85,48 +85,58 @@ struct FindView: View {
     @ObservedObject var compassHeading = CompassHeading()
     //    @State var pixelmonDegree = 40
     @ObservedObject var locationManager = LocationManager()
-    var pixelmon = pixelmons[0]
+    @AppStorage("currentPokemon") var currentPokemon = 1;
+    var debugMode = true
     
     var body: some View {
         VStack {
-            if let myLocation = locationManager.location {
-                let pmDegree = Direction(from: Coordinates(latitude: myLocation.latitude, longitude: myLocation.longitude), to: Coordinates(latitude: -6.302107894052675, longitude: 106.65240718297603)).direction
-                
-                let myLocationObj = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
-                let targetLocationObj = CLLocation(latitude: -6.302107894052675, longitude: 106.65240718297603)
-                let distance = myLocationObj.distance(from: targetLocationObj) // meter
-                ZStack (alignment: .center) {
-                    if distance < 20 {
-                        PixelmonButtonView(pixelmon: pixelmon)
-                            .onAppear {
-                                WKInterfaceDevice.current().play(.start)
-                            }
-                    } else {
-                        VStack {
-                            Text(String(format:"Get closer! %.1fm", distance))
-                            Capsule()
-                                .frame(width: 2,
-                                       height: 30)
-                            ZStack {
-                                ForEach(Marker.markers(pixelmonDegree: Double(pmDegree)), id: \.self) { marker in
-                                    CompassMarkerView(marker: marker,
-                                                      compassDegress: self.compassHeading.degrees)
+            if debugMode {
+                let pixelmon = pixelmons[currentPokemon - 1]
+                PixelmonButtonView(pixelmon: pixelmon)
+                    .onAppear {
+                        WKInterfaceDevice.current().play(.start)
+                    }
+            } else {
+                let pixelmon = pixelmons[currentPokemon-1]
+                if let myLocation = locationManager.location {
+                    let pmDegree = Direction(from: Coordinates(latitude: myLocation.latitude, longitude: myLocation.longitude), to: Coordinates(latitude: -6.302107894052675, longitude: 106.65240718297603)).direction
+                    
+                    let myLocationObj = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
+                    let targetLocationObj = CLLocation(latitude: -6.302107894052675, longitude: 106.65240718297603)
+                    let distance = myLocationObj.distance(from: targetLocationObj) // meter
+                    ZStack (alignment: .center) {
+                        if distance < 20 {
+                            PixelmonButtonView(pixelmon: pixelmon)
+                                .onAppear {
+                                    WKInterfaceDevice.current().play(.start)
                                 }
+                        } else {
+                            VStack {
+                                Text(String(format:"Get closer! %.1fm", distance))
+                                Capsule()
+                                    .frame(width: 2,
+                                           height: 30)
+                                ZStack {
+                                    ForEach(Marker.markers(pixelmonDegree: Double(pmDegree)), id: \.self) { marker in
+                                        CompassMarkerView(marker: marker,
+                                                          compassDegress: self.compassHeading.degrees)
+                                    }
+                                }
+                                .frame(width: 150,
+                                       height: 150)
+                                .rotationEffect(Angle(degrees: self.compassHeading.degrees))
                             }
-                            .frame(width: 150,
-                                   height: 150)
-                            .rotationEffect(Angle(degrees: self.compassHeading.degrees))
                         }
                     }
                 }
-            }
-            else {
-                Text("Start Catching Pixelmon").font(.footnote)
-                LocationButton {
-                    locationManager.startUpdatingLocation()
+                else {
+                    Text("Start Catching Pixelmon").font(.footnote)
+                    LocationButton {
+                        locationManager.startUpdatingLocation()
+                    }
+                    .labelStyle(.iconOnly)
+                    .cornerRadius(20)
                 }
-                .labelStyle(.iconOnly)
-                .cornerRadius(20)
             }
         }
         
