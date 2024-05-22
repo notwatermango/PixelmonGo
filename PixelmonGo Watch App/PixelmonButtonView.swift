@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PixelmonButtonView: View {
     let pixelmon: Pixelmon
-    @State private var isActive = false
 
     var body: some View {
         ZStack(alignment: .top) {

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct InventoryView: View {
+    @EnvironmentObject private var state: State
+
     @AppStorage("currentPokemon") var currentPokemon = 0
     @AppStorage("currentCaughtPokemon") var currentCaughtPokemon = -1
     var body: some View {
@@ -19,7 +21,7 @@ struct InventoryView: View {
                 ScrollView {
                     ForEach(pixelmons) {pixelmon in
                         if pixelmon.id < currentPokemon {
-                            NavigationLink(destination: PokemonDetailView(pixelmon: pixelmon)) {
+                            NavigationLink(destination: PokemonDetailView(pixelmon: pixelmon).environmentObject(state)) {
                                 if pixelmon.id == currentCaughtPokemon {
                                     Text("new! \(pixelmon.name)")
                                 } else {

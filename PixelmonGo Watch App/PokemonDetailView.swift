@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PokemonDetailView: View {
+    @EnvironmentObject private var state: State
+
     let pixelmon: Pixelmon
     var body: some View {
         NavigationStack {
@@ -18,9 +20,11 @@ struct PokemonDetailView: View {
                 
             }
         }
+        .onAppear(perform: { state.hideTabView = true })
+        .onDisappear(perform: { state.hideTabView = false })
     }
 }
 
 #Preview {
-    PokemonDetailView(pixelmon: pixelmons[0])
+    PokemonDetailView(pixelmon: pixelmons[0]).environmentObject(State())
 }
