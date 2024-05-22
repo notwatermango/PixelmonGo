@@ -19,7 +19,7 @@ struct InventoryView: View {
                 ScrollView {
                     ForEach(pixelmons) {pixelmon in
                         if pixelmon.id < currentPokemon {
-                            NavigationLink(destination: PixelmonListItem(pixelmon: pixelmon)) {
+                            NavigationLink(destination: PokemonDetailView(pixelmon: pixelmon)) {
                                 if pixelmon.id == currentCaughtPokemon {
                                     Text("new! \(pixelmon.name)")
                                 } else {
@@ -31,16 +31,6 @@ struct InventoryView: View {
                     }
                 }
             }
-        }
-    }
-}
-
-struct PixelmonListItem: View {
-    let pixelmon: Pixelmon
-    var body: some View {
-        NavigationStack {
-            Text(pixelmon.description)
-                .navigationTitle(pixelmon.name)
         }
     }
 }

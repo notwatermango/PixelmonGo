@@ -98,11 +98,12 @@ struct FindView: View {
                     }
             } else {
                 let pixelmon = pixelmons[currentPokemon-1]
+                let pixelmonLocation = pixelmon.location
                 if let myLocation = locationManager.location {
-                    let pmDegree = Direction(from: Coordinates(latitude: myLocation.latitude, longitude: myLocation.longitude), to: Coordinates(latitude: -6.302107894052675, longitude: 106.65240718297603)).direction
+                    let pmDegree = Direction(from: Coordinates(latitude: myLocation.latitude, longitude: myLocation.longitude), to: Coordinates(latitude: myLocation.latitude, longitude: myLocation.longitude)).direction
                     
                     let myLocationObj = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
-                    let targetLocationObj = CLLocation(latitude: -6.302107894052675, longitude: 106.65240718297603)
+                    let targetLocationObj = pixelmonLocation
                     let distance = myLocationObj.distance(from: targetLocationObj) // meter
                     ZStack (alignment: .center) {
                         if distance < 20 {

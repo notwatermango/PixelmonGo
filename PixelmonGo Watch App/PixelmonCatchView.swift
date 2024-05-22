@@ -24,10 +24,10 @@ struct PixelmonCatchView: View {
                 if currentPokemon < pixelmons.count - 1 {
                     currentPokemon = pixelmon.id + 1
                 }
-                // Change tab to inventory
-                currentPage = 2
                 // Reset radarview
                 dismiss()
+                // Change tab to inventory
+                currentPage = 2
             } label: {
                 Text("Catch")
             }.frame(width: 100)
