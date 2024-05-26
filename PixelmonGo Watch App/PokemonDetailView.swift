@@ -14,7 +14,7 @@ struct PokemonDetailView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                AnimatingImage(images: pixelmon.imageAnimation, width: 36*3, height: 30*3)
+                AnimatingImage(images: pixelmon.imageAnimation, width: pixelmon.computedWidth, height: pixelmon.computedHeight)
                 Text(pixelmon.description)
                     .navigationTitle(pixelmon.name)
                 
