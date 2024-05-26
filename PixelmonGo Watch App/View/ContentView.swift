@@ -7,22 +7,23 @@
 
 import SwiftUI
 
-class State: ObservableObject {
+class Router: ObservableObject {
     @Published var hideTabView: Bool = false
+    @Published var selectedTab: Int = 1
 }
 
 struct ContentView: View {
-    @AppStorage("currentPage") var currentPage = 1
     @AppStorage("currentPixelmon") var currentPixelmonIndex = 0
     @AppStorage("currentCaughtPixelmon") var currentCaughtPixelmon = -1
-    
-    @StateObject private var state = State()
+    @AppStorage("selectedTab") var selectedTab = 1
+
+    @StateObject private var router = Router()
     
     var body: some View {
-        TabView(selection: $currentPage) {
-            FindView()
+        TabView(selection: $selectedTab) {
+            FindView(router: router)
                 .tabItem {
-                    if !state.hideTabView {
+                    if !router.hideTabView {
                         Label("Radar Tab", systemImage: "")
                     }
                 }
@@ -31,7 +32,7 @@ struct ContentView: View {
                 .tag(1)
             InventoryView()
                 .tabItem {
-                    if !state.hideTabView {
+                    if !router.hideTabView {
                         Label("Inventory Tab", systemImage: "")
                     }
                 }
@@ -40,7 +41,7 @@ struct ContentView: View {
                 .tag(2)
         }
         .tabViewStyle(.verticalPage)
-        .environmentObject(state)
+        .environmentObject(router)
     }
 }
 

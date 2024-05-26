@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InventoryView: View {
-    @EnvironmentObject private var state: State
+    @EnvironmentObject private var state: Router
 
     @AppStorage("currentPixelmon") var currentPixelmon = 0
     @AppStorage("currentCaughtPixelmon") var currentCaughtPixelmon = -1

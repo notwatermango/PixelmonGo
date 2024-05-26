@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct PixelmonCatchView: View {
-    @AppStorage("currentPage") var currentPage = 1
     @AppStorage("currentPixelmon") var currentPixelmon = 0
     @AppStorage("currentCaughtPixelmon") var currentCaughtPixelmon = -1
-    let pixelmon: Pixelmon
+    @AppStorage("selectedTab") var selectedTab = 1
     @Environment(\.dismiss) private var dismiss
+    let pixelmon: Pixelmon
+    let router: Router
     
     var body: some View {
 
@@ -24,10 +25,11 @@ struct PixelmonCatchView: View {
                 if currentPixelmon < pixelmons.count - 1 {
                     currentPixelmon = pixelmon.id + 1
                 }
+                // Change tab to inventory
+                selectedTab = 1
+                router.selectedTab = 2
                 // Reset radarview
                 dismiss()
-                // Change tab to inventory
-                currentPage = 2
             } label: {
                 Text("Catch")
             }.frame(width: 100)
@@ -36,5 +38,5 @@ struct PixelmonCatchView: View {
 }
 
 #Preview {
-    PixelmonCatchView(pixelmon: pixelmons[0])
+    return PixelmonCatchView(pixelmon: pixelmons[0], router: Router())
 }

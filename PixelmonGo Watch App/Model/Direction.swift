@@ -85,13 +85,6 @@ public struct Coordinates: Codable, Equatable {
     }
 }
 
-// Relative from
-// north
-// -6.281594245116325, 106.65228723498674
-// genkai
-// -6.302107894052675, 106.65240718297603
-
-
 public struct Direction {
   // The heading to a destination from True North
   public let direction: Double

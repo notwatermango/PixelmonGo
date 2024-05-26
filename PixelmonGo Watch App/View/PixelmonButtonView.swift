@@ -9,12 +9,13 @@ import SwiftUI
 
 struct PixelmonButtonView: View {
     let pixelmon: Pixelmon
-
+    let router: Router
+    
     var body: some View {
         ZStack(alignment: .top) {
             NavigationStack {
                 Text("A pixelmon has appeared!").font(.footnote)
-                NavigationLink(destination: PixelmonCatchView(pixelmon: pixelmon)
+                NavigationLink(destination: PixelmonCatchView(pixelmon: pixelmon, router: router)
                                ,label: {
                     AnimatingImage(images: pixelmon.imageAnimation, width: pixelmon.computedWidth/3, height: pixelmon.computedHeight/3)
                 })
@@ -25,5 +26,6 @@ struct PixelmonButtonView: View {
 }
 
 #Preview {
-    PixelmonButtonView(pixelmon: pixelmons[0])
+    @State var s = 1
+    return PixelmonButtonView(pixelmon: pixelmons[0], router: Router())
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PixelmonDataView: View {
-    @EnvironmentObject private var state: State
+    @EnvironmentObject private var state: Router
 
     let pixelmon: Pixelmon
     var body: some View {
@@ -25,5 +25,5 @@ struct PixelmonDataView: View {
 }
 
 #Preview {
-    PixelmonDataView(pixelmon: pixelmons[0]).environmentObject(State())
+    PixelmonDataView(pixelmon: pixelmons[0]).environmentObject(Router())
 }

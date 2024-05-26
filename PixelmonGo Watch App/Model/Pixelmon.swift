@@ -64,8 +64,9 @@ var pixelmons = [
     Pixelmon(id: 5,  name: "Rockhide", imageName: "rockhide", description: "A rock-type Pixelmon with a tough, rocky hide. It's surprisingly agile for its size.", location: CLLocation(latitude: -6.301685500185822, longitude: 106.65422919282146), imageAnimation: (1...11).map {
         String(format: "trunk_%d", $0)
     }, imageWidth: 2, imageHeight: 1), // 2 x 1
-    Pixelmon(id: 6,  name: "Whisplight", imageName: "whisplight", description:  "A ghost-type Pixelmon that resembles a wisp of smoke. It loves to play pranks by flickering lights.", location: CLLocation(latitude: -6.301913797472432, longitude: 106.65352780525258), imageAnimation: (1...7).map {
-        String(format: "flying_bat_%d", $0)
+//    Pixelmon(id: 6,  name: "Whisplight", imageName: "whisplight", description:  "A ghost-type Pixelmon that resembles a wisp of smoke. It loves to play pranks by flickering lights.", location: CLLocation(latitude: -6.301913797472432, longitude: 106.65352780525258), imageAnimation: (1...7).map {
+    Pixelmon(id: 6,  name: "Whisplight", imageName: "whisplight", description:  "A ghost-type Pixelmon that resembles a wisp of smoke. It loves to play pranks by flickering lights.", location: CLLocation(latitude: -6.644975531267701, longitude: 107.88541211363585), imageAnimation: (1...7).map {
+        String(format: "flying_bat_%d", $0) // debug
     }, imageWidth: 23, imageHeight: 15), // 23 15
     Pixelmon(id: 7,  name:  "Emberclaw", imageName: "emberclaw", description: "This fire-type Pixelmon has claws that burn with a faint ember. It loves to chase after butterflies.", location: CLLocation(latitude: -6.3020087936269436, longitude: 106.65394401326083), imageAnimation: (1...10).map {
         String(format: "chameleon_%d", $0)

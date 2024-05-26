@@ -8,27 +8,27 @@
 import CoreLocation
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    let manager: CLLocationManager
+    let locationManager: CLLocationManager
     @Published var degrees: Double = 0
     @Published var location: CLLocationCoordinate2D?
     
     override init() {
-        self.manager = CLLocationManager()
+        self.locationManager = CLLocationManager()
         super.init()
 
-        self.manager.delegate = self
+        self.locationManager.delegate = self
         self.setup()
         
     }
     
     func setup() {
-        if manager.authorizationStatus != .authorizedAlways {
-            manager.requestAlwaysAuthorization()
+        if self.locationManager.authorizationStatus != .authorizedWhenInUse {
+            self.locationManager.requestWhenInUseAuthorization()
         }
-        manager.allowsBackgroundLocationUpdates = true
+        
         if CLLocationManager.headingAvailable() {
-            manager.startUpdatingLocation()
-            manager.startUpdatingHeading()
+            self.locationManager.startUpdatingLocation()
+            self.locationManager.startUpdatingHeading()
         }
     }
     
@@ -37,11 +37,11 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func requestLocation() {
-        manager.requestLocation()
+        locationManager.requestLocation()
     }
     
     func startUpdatingLocation() {
-        manager.startUpdatingLocation()
+        locationManager.startUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
