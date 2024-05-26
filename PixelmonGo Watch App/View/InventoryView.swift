@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct InventoryView: View {
-    @EnvironmentObject private var state: Router
-
+    @EnvironmentObject private var router: Router
     @AppStorage("currentPixelmon") var currentPixelmon = 0
     @AppStorage("currentCaughtPixelmon") var currentCaughtPixelmon = -1
+    
     var body: some View {
         NavigationStack {
             if currentCaughtPixelmon == -1 {
@@ -20,8 +20,8 @@ struct InventoryView: View {
             } else {
                 ScrollView {
                     ForEach(pixelmons) {pixelmon in
-                        if pixelmon.id < currentPixelmon {
-                            NavigationLink(destination: PixelmonDataView(pixelmon: pixelmon).environmentObject(state)) {
+                        if pixelmon.id <= currentCaughtPixelmon {
+                            NavigationLink(destination: PixelmonDataView(pixelmon: pixelmon).environmentObject(router)) {
                                 if pixelmon.id == currentCaughtPixelmon {
                                     Text("new! \(pixelmon.name)")
                                 } else {
@@ -35,8 +35,4 @@ struct InventoryView: View {
             }
         }
     }
-}
-
-#Preview {
-    InventoryView()
 }

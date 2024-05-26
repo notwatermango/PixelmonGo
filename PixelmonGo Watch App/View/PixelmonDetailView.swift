@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct PixelmonDataView: View {
-    @EnvironmentObject private var state: Router
-
+    @EnvironmentObject private var router: Router
     let pixelmon: Pixelmon
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -19,8 +19,8 @@ struct PixelmonDataView: View {
                     .navigationTitle(pixelmon.name)
             }
         }
-        .onAppear(perform: { state.hideTabView = true })
-        .onDisappear(perform: { state.hideTabView = false })
+        .onAppear(perform: { router.hideTabView = true })
+        .onDisappear(perform: { router.hideTabView = false })
     }
 }
 

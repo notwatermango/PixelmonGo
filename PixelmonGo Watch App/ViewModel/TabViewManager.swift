@@ -14,3 +14,8 @@ class TabViewManager: ObservableObject {
         currentTab = selectTab
     }
 }
+
+class Router: ObservableObject {
+    @Published var hideTabView: Bool = false
+    @Published var selectedTab: Int = 1
+}

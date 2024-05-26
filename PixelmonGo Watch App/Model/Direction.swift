@@ -20,7 +20,7 @@ private struct Angle: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
     init(_ value: Double) {
         self.degrees = value
     }
-    
+
     init(radians: Double) {
         self.degrees = (radians * 180.0) / .pi
     }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FF03BCC22C039611004FB638 /* TabViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF03BCC12C039611004FB638 /* TabViewManager.swift */; };
+		FF03BCC42C03A977004FB638 /* IngameCheatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF03BCC32C03A977004FB638 /* IngameCheatManager.swift */; };
+		FF03BCC62C03B19F004FB638 /* CompassMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF03BCC52C03B19F004FB638 /* CompassMarkerView.swift */; };
 		FF7B8EEB2BF77102009A6BE0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7B8EEA2BF77102009A6BE0 /* LocationManager.swift */; };
 		FF8725492BFDEFDA00E23250 /* AnimatingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8725482BFDEFDA00E23250 /* AnimatingImage.swift */; };
 		FF87254B2BFDF40500E23250 /* PixelmonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF87254A2BFDF40500E23250 /* PixelmonDetailView.swift */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		FF03BCC12C039611004FB638 /* TabViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewManager.swift; sourceTree = "<group>"; };
+		FF03BCC32C03A977004FB638 /* IngameCheatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngameCheatManager.swift; sourceTree = "<group>"; };
+		FF03BCC52C03B19F004FB638 /* CompassMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassMarkerView.swift; sourceTree = "<group>"; };
 		FF7B8EEA2BF77102009A6BE0 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FF7B8EEC2BF77472009A6BE0 /* PixelmonGo-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "PixelmonGo-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FF8725482BFDEFDA00E23250 /* AnimatingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingImage.swift; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				FFC612462BF4BE38008FF57B /* ContentView.swift */,
+				FF03BCC52C03B19F004FB638 /* CompassMarkerView.swift */,
 				FFC612582BF4C34F008FF57B /* FindView.swift */,
 				FFAABAFD2BFB4FF4004ED0A1 /* PixelmonCatchView.swift */,
 				FFAABAFF2BFB4FFF004ED0A1 /* PixelmonButtonView.swift */,
@@ -111,6 +116,7 @@
 				FF7B8EEA2BF77102009A6BE0 /* LocationManager.swift */,
 				FF8725482BFDEFDA00E23250 /* AnimatingImage.swift */,
 				FF03BCC12C039611004FB638 /* TabViewManager.swift */,
+				FF03BCC32C03A977004FB638 /* IngameCheatManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 				FFC612612BF4E029008FF57B /* Direction.swift in Sources */,
 				FFC612452BF4BE38008FF57B /* PixelmonGoApp.swift in Sources */,
 				FF7B8EEB2BF77102009A6BE0 /* LocationManager.swift in Sources */,
+				FF03BCC62C03B19F004FB638 /* CompassMarkerView.swift in Sources */,
 				FF87254B2BFDF40500E23250 /* PixelmonDetailView.swift in Sources */,
 				FFAABB002BFB4FFF004ED0A1 /* PixelmonButtonView.swift in Sources */,
 				FFAABAFE2BFB4FF4004ED0A1 /* PixelmonCatchView.swift in Sources */,
@@ -266,6 +273,7 @@
 				FF03BCC22C039611004FB638 /* TabViewManager.swift in Sources */,
 				FFC612592BF4C34F008FF57B /* FindView.swift in Sources */,
 				FFC6125B2BF4C62D008FF57B /* InventoryView.swift in Sources */,
+				FF03BCC42C03A977004FB638 /* IngameCheatManager.swift in Sources */,
 				FF8725492BFDEFDA00E23250 /* AnimatingImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
