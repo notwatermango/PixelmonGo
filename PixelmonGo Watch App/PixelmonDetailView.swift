@@ -1,5 +1,5 @@
 //
-//  PokemonDetailView.swift
+//  PixelmonDetailView.swift
 //  PixelmonGo Watch App
 //
 //  Created by mg0 on 22/05/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PokemonDetailView: View {
+struct PixelmonDataView: View {
     @EnvironmentObject private var state: State
 
     let pixelmon: Pixelmon
@@ -17,7 +17,6 @@ struct PokemonDetailView: View {
                 AnimatingImage(images: pixelmon.imageAnimation, width: pixelmon.computedWidth, height: pixelmon.computedHeight)
                 Text(pixelmon.description)
                     .navigationTitle(pixelmon.name)
-                
             }
         }
         .onAppear(perform: { state.hideTabView = true })
@@ -26,5 +25,5 @@ struct PokemonDetailView: View {
 }
 
 #Preview {
-    PokemonDetailView(pixelmon: pixelmons[0]).environmentObject(State())
+    PixelmonDataView(pixelmon: pixelmons[0]).environmentObject(State())
 }

@@ -10,19 +10,19 @@ import SwiftUI
 struct InventoryView: View {
     @EnvironmentObject private var state: State
 
-    @AppStorage("currentPokemon") var currentPokemon = 0
-    @AppStorage("currentCaughtPokemon") var currentCaughtPokemon = -1
+    @AppStorage("currentPixelmon") var currentPixelmon = 0
+    @AppStorage("currentCaughtPixelmon") var currentCaughtPixelmon = -1
     var body: some View {
         NavigationStack {
-            if currentCaughtPokemon == -1 {
-                Text("You have nothing! Go catch some pokemon!").font(.footnote)
+            if currentCaughtPixelmon == -1 {
+                Text("You have nothing! Go catch some pixelmon!").font(.footnote)
                     .navigationTitle("Inventory")
             } else {
                 ScrollView {
                     ForEach(pixelmons) {pixelmon in
-                        if pixelmon.id < currentPokemon {
-                            NavigationLink(destination: PokemonDetailView(pixelmon: pixelmon).environmentObject(state)) {
-                                if pixelmon.id == currentCaughtPokemon {
+                        if pixelmon.id < currentPixelmon {
+                            NavigationLink(destination: PixelmonDataView(pixelmon: pixelmon).environmentObject(state)) {
+                                if pixelmon.id == currentCaughtPixelmon {
                                     Text("new! \(pixelmon.name)")
                                 } else {
                                     Text("\(pixelmon.name)")

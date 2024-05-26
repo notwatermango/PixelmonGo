@@ -16,7 +16,7 @@ struct PixelmonButtonView: View {
                 Text("A pixelmon has appeared!").font(.footnote)
                 NavigationLink(destination: PixelmonCatchView(pixelmon: pixelmon)
                                ,label: {
-                    Image(systemName: "trash")
+                    AnimatingImage(images: pixelmon.imageAnimation, width: pixelmon.computedWidth/3, height: pixelmon.computedHeight/3)
                 })
                 .frame(width: 60, height: 60)
             }

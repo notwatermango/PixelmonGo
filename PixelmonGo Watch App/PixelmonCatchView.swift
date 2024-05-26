@@ -9,20 +9,20 @@ import SwiftUI
 
 struct PixelmonCatchView: View {
     @AppStorage("currentPage") var currentPage = 1
-    @AppStorage("currentPokemon") var currentPokemon = 0
-    @AppStorage("currentCaughtPokemon") var currentCaughtPokemon = -1
+    @AppStorage("currentPixelmon") var currentPixelmon = 0
+    @AppStorage("currentCaughtPixelmon") var currentCaughtPixelmon = -1
     let pixelmon: Pixelmon
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
 
         VStack {
-            Image(systemName: "trash.fill").resizable().frame(width: 90, height: 90)
+            AnimatingImage(images: pixelmon.imageAnimation, width: pixelmon.computedWidth, height: pixelmon.computedHeight)
             Button {
                 // Update inventory
-                currentCaughtPokemon = pixelmon.id
-                if currentPokemon < pixelmons.count - 1 {
-                    currentPokemon = pixelmon.id + 1
+                currentCaughtPixelmon = pixelmon.id
+                if currentPixelmon < pixelmons.count - 1 {
+                    currentPixelmon = pixelmon.id + 1
                 }
                 // Reset radarview
                 dismiss()

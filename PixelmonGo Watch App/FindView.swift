@@ -85,19 +85,19 @@ struct FindView: View {
     @ObservedObject var compassHeading = CompassHeading()
     //    @State var pixelmonDegree = 40
     @ObservedObject var locationManager = LocationManager()
-    @AppStorage("currentPokemon") var currentPokemon = 1;
+    @AppStorage("currentPixelmon") var currentPixelmon = 1;
     var debugMode = true
     
     var body: some View {
         VStack {
             if debugMode {
-                let pixelmon = pixelmons[currentPokemon - 1]
+                let pixelmon = pixelmons[currentPixelmon - 1]
                 PixelmonButtonView(pixelmon: pixelmon)
                     .onAppear {
                         WKInterfaceDevice.current().play(.start)
                     }
             } else {
-                let pixelmon = pixelmons[currentPokemon-1]
+                let pixelmon = pixelmons[currentPixelmon-1]
                 let pixelmonLocation = pixelmon.location
                 if let myLocation = locationManager.location {
                     let pmDegree = Direction(from: Coordinates(latitude: myLocation.latitude, longitude: myLocation.longitude), to: Coordinates(latitude: myLocation.latitude, longitude: myLocation.longitude)).direction

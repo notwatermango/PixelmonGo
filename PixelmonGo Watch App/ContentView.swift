@@ -13,8 +13,8 @@ class State: ObservableObject {
 
 struct ContentView: View {
     @AppStorage("currentPage") var currentPage = 1
-    @AppStorage("currentPokemon") var currentPokemonIndex = 0
-    @AppStorage("currentCaughtPokemon") var currentCaughtPokemon = -1
+    @AppStorage("currentPixelmon") var currentPixelmonIndex = 0
+    @AppStorage("currentCaughtPixelmon") var currentCaughtPixelmon = -1
     
     @StateObject private var state = State()
     
